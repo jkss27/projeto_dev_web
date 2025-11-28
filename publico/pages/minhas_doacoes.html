@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instituto Nala - Minhas Doações</title>
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../assets/css/pages/styles.css">
+</head>
+<body>
+<header>
+	<div class="logo-container">
+		<img src="../assets/img/styles/headerlogo.png" class="logo" alt="logo Instituto Nala">
+		<span class="logo-text">Instituto Nala</span>
+	</div>
+	<div class="menu-toggle" id="menuToggle">
+		<span></span><span></span><span></span>
+	</div>
+	<nav class="navegacao nav_bar" id="navegacao">
+		<a href="index.html">Página inicial</a>
+		<a href="doacao_rapida.html">Doação Rápida</a>
+		<a href="contatos.html">Contatos</a>
+		<a href="sobre_nos.html">Sobre nós</a>
+		<button class="botaologin" onclick="window.location.href='login_doador.html'">Fazer Login</button>
+	</nav>
+</header>
+
+<main style="margin-top:100px; max-width:950px; padding:2rem; background:#fff; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.1);">
+	<h1 style="margin-bottom:1rem; color:#957cc2;">Minhas Doações</h1>
+	<p style="margin-bottom:1.2rem;">Aqui você poderá acompanhar o histórico das suas contribuições.</p>
+	<div id="lista_doacoes" style="display:grid; gap:1rem;"></div>
+	<p id="sem_doacoes" style="color:#666; font-size:.9rem;">Nenhuma doação registrada ainda.</p>
+</main>
+
+<script src="../assets/js/pages/scripts_index.js"></script>
+<script src="../assets/js/pages/scripts_minhas_doacoes.js"></script>
+</body>
+</html>

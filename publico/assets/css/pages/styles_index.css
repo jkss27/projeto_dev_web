@@ -1,0 +1,364 @@
+main {
+    flex: 1;
+    width: 100%;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(135deg, #957cc2 0%, #b89dd9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.5;
+    filter: brightness(50%);
+}
+
+.banner_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.banner_content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.banner_content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner_content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.banner_btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: #fff;
+    color: #957cc2;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.banner_btn:hover {
+    background: #f0e6ff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section_header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+.section_header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.section_header h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #957cc2;
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.section_header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.areas_atuacao {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.areas_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.area_card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.area_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(149, 124, 194, 0.3);
+    border-color: #957cc2;
+}
+
+.area_icon {
+    font-size: 4rem;
+    color: #957cc2;
+    margin-bottom: 1.5rem;
+}
+
+.area_card h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.area_card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.saiba_mais_btn {
+    padding: 0.7rem 2rem;
+    background: transparent;
+    color: #957cc2;
+    border: 2px solid #957cc2;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.saiba_mais_btn:hover {
+    background: #957cc2;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.cta-final {
+    background: linear-gradient(135deg, #8b6db8 0%, #957cc2 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 1.2rem 3.5rem;
+    background: #fff;
+    color: #957cc2;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn i {
+    margin-right: 0.5rem;
+}
+
+.cta-btn:hover {
+    background: #f0e6ff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #957cc2;
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.footer-section p i {
+    margin-right: 0.5rem;
+    color: #957cc2;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #957cc2;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #8367b8;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        height: 500px;
+        margin-top: 70px;
+    }
+
+    .banner_content h1 {
+        font-size: 2rem;
+    }
+
+    .banner_content p {
+        font-size: 1.1rem;
+    }
+
+    .section_header h2 {
+        font-size: 2rem;
+    }
+
+    .areas_container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-content p {
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        height: 400px;
+    }
+
+    .banner_content h1 {
+        font-size: 1.6rem;
+    }
+
+    .banner_content p {
+        font-size: 1rem;
+    }
+
+    .banner_btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+
+    .section_header h2 {
+        font-size: 1.6rem;
+    }
+
+    .area_card {
+        padding: 1.5rem;
+    }
+
+    .area_icon {
+        font-size: 3rem;
+    }
+
+    .cta-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+}

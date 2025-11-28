@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #e8e0f5;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    background: linear-gradient(270deg, #957cc2, #b89dd9, #8b6db8, #a68cc9);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s ease infinite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo-text {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav_bar { display: flex; align-items: center; gap: 30px; }
+
+.navegacao a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+.nav_bar a { position: relative; color:#fff; text-decoration:none; font-size:1em; font-weight:500; white-space:nowrap; transition: color .3s; }
+
+.navegacao a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.nav_bar a::after { content:''; position:absolute; left:0; bottom:-6px; width:100%; height:3px; background:#fff; border-radius:5px; transform-origin:right; transform:scaleX(0); transition:transform .5s; }
+
+.navegacao a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.nav_bar a:hover::after { transform:scaleX(1); transform-origin:left; }
+
+.navegacao .botaologin {
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    transition: all 0.5s;
+}
+.nav_bar .botaologin { padding:10px 25px; background:transparent; border:2px solid #fff; border-radius:6px; outline:none; cursor:pointer; font-size:1em; font-weight:500; color:#fff; white-space:nowrap; transition:all .5s; }
+
+.alternar_senha.ativo {
+    color: #957cc2 !important;
+}
+
+.navegacao .botaologin:hover {
+    background: #fff;
+    color: #957cc2;
+}
+.nav_bar .botaologin:hover { background:#fff; color:#957cc2; }
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.menu_toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+.menu_toggle span { width:30px; height:3px; background:#fff; border-radius:3px; transition:all .3s; }
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+.menu_toggle.active span:nth-child(1) { transform:rotate(45deg) translate(8px,8px); }
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu_toggle.active span:nth-child(2) { opacity:0; }
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+.menu_toggle.active span:nth-child(3) { transform:rotate(-45deg) translate(7px,-7px); }
+
+@media screen and (max-width: 992px) {
+    header {
+        padding: 15px 3%;
+    }
+
+    .navegacao {
+        gap: 20px;
+    }
+
+    .navegacao a {
+        font-size: 0.95em;
+    }
+
+    .navegacao .botaologin {
+        font-size: 0.95em;
+        padding: 8px 20px;
+    }
+
+    .logo-text {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo-text {
+        font-size: 1.2em;
+    }
+
+    header .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-toggle, .menu_toggle {
+        display: flex;
+    }
+
+    .navegacao, .nav_bar {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background: linear-gradient(180deg, #957cc2, #b89dd9);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        gap: 25px;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navegacao.active, .nav_bar.active {
+        right: 0;
+    }
+
+    .navegacao a, .nav_bar a {
+        width: 100%;
+        font-size: 1.1em;
+        padding: 10px 0;
+    }
+
+    .navegacao .botaologin, .nav_bar .botaologin {
+        width: 100%;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-text {
+        font-size: 1em;
+    }
+
+    .logo-container {
+        gap: 10px;
+    }
+
+    header .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navegacao {
+        width: 250px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .logo-text {
+        font-size: 0.9em;
+    }
+
+    header .logo {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico" type="image/x-icon">
+    <title>Login - Instituto Nala</title>
+    <link rel="stylesheet" href="../assets/css/pages/styles_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo_container">
+            <img src="../assets/img/styles/headerlogo.png" class="logo" alt="logo Instituto Nala">
+            <span class="logo_text">Instituto Nala</span>
+        </div>
+        <div class="menu_toggle" id="menu_toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav_bar navegacao" id="nav_bar">
+            <a href="index.html">Página inicial</a>
+            <a href="doacao_rapida.html">Doação Rápida</a>
+            <a href="contatos.html">Contatos</a>
+            <a href="sobre_nos.html">Sobre nós</a>
+            <button class="botaologin" onclick="window.location.href='login_doador.html'">Fazer Login</button>
+        </nav>
+    </header>
+
+    <section id="login_form">
+        <div class="container">
+            <div class="form">
+                <form action="#" novalidate>
+                    <div class="form_header">
+                        <div class="title"><h1>Login</h1></div>
+                    </div>
+
+                    <div class="login_mode_selector">
+                        <button type="button" class="mode_btn active" data-mode="email">E-mail</button>
+                        <button type="button" class="mode_btn" data-mode="cpf">CPF</button>
+                    </div>
+
+                    <div class="input_group">
+                        <div class="input_box">
+                            <label for="login_input" id="loginLabel">E-mail *</label>
+                            <input type="text" id="login_input" name="login_input" placeholder="seunome@exemplo.com" required>
+                            <p id="login_errormsg" class="erro">Por favor, preencha este campo.</p>
+                        </div>
+                        
+                        <div class="input_box">
+                            <label for="senha">Senha *</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                                <i class="fa-regular fa-eye toggle-password" id="mostrar_senha"></i>
+                            </div>
+                            <p id="senha_errormsg" class="erro">Por favor, insira sua senha.</p>
+                            <div class="forgot-password">
+                                <p class="termos">Ao continuar, você concorda com nossos <a href="#">termos de uso</a> e <a href="#">política de privacidade</a>.</p>
+                                <a id="esqueceu_senha">Esqueceu a senha?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="continue_button">
+                        <button type="submit" href="PROJETO INSTITUICAO NALA/publico/pages/doacao.html">Entrar</button>
+                        <span class="texto_link_cadastro">Ainda não é um doador? 
+                            <a class="link_cadastro" href="cadastro_doador.html"><strong>Cadastre-se</strong></a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="recovery_window" id="janela_recuperacao">
+        <div class="content_recovery">
+            <button class="botao_fechar" id="botao_fechar">&times;</button>
+        
+            
+            <div id="recuperacao" class="recovery">
+                <div class="recovery_header">
+                    <h2>Recuperar Senha</h2>
+                    <p>Escolha como deseja receber o código de verificação:</p>
+                </div>
+                <div class="recovery_mode_selector">
+                    <button type="button" class="recovery_mode_btn active" data_recovery="email">E-mail</button>
+                    <button type="button" class="recovery_mode_btn" data_recovery="phone">Telefone</button>
+                </div>
+                <div class="recovery_input_box">
+                    <label for="recovery_input" id="recovery_label">E-mail *</label>
+                    <input type="text" id="recovery_input" placeholder="seunome@exemplo.com">
+                </div>
+                <button class="recovery_btn" id="enviar_codigo_btn">Enviar Código</button>
+            </div>
+
+            <div id="codigo_recuperacao" class="recovery_code" style="display: none;">
+                <div class="codigo_header">
+                    <h2>Verificar Código</h2>
+                    <p>Digite o código de 4 dígitos enviado para <span id="sentTo"></span></p>
+                </div>
+                <div class="code_input_group">
+                    <input type="text" maxlength="1" class="code_digit" id="digito_1">
+                    <input type="text" maxlength="1" class="code_digit" id="digito_2">
+                    <input type="text" maxlength="1" class="code_digit" id="digito_3">
+                    <input type="text" maxlength="1" class="code_digit" id="digito_4">
+                </div>
+                <p id="codigo_errormsg" class="erro" style="text-align: center;">Código incorreto. Tente novamente.</p>
+                <button class="verify_code_btn" id="botao_codigo">Verificar Código</button>
+            </div>
+
+            <div id="nova_senha_step" class="new_password_window" style="display: none;">
+                <div class="new_password_header">
+                    <h2>Nova Senha</h2>
+                    <p>Crie uma nova senha para sua conta</p>
+                </div>
+                <div class="new_password_input_box">
+                    <label for="nova_senha">Nova Senha *</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="nova_senha" placeholder="Digite sua nova senha">
+                        <i class="fa-regular fa-eye toggle-password" id="mostrar_nova_senha"></i>
+                    </div>
+                    <p id="new_password_errormsg" class="erro">A senha deve ter no mínimo 8 caracteres.</p>
+                </div>
+                <div class="conf_password_input_box">
+                    <label for="confirmar_senha">Confirmar Senha *</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmar_senha" placeholder="Confirme sua nova senha">
+                        <i class="fa-regular fa-eye toggle-password" id="mostrar_confirmar_senha"></i>
+                    </div>
+                    <p id="confirm_password_errormsg" class="erro">As senhas não coincidem.</p>
+                </div>
+                <button class="change_password_btn" id="mudar_senha_botao">Alterar Senha</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vanilla-masker/build/vanilla-masker.min.js"></script>
+    <script src="../assets/js/pages/scripts_login.js"></script>
+</body>
+</html>

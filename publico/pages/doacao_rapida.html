@@ -1,0 +1,124 @@
+(<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instituto Nala - Doação Rápida</title>
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../assets/css/pages/styles.css">
+	<link rel="stylesheet" href="../assets/css/pages/styles_doacao_rapida.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+	<div class="logo-container">
+		<img src="../assets/img/styles/headerlogo.png" class="logo" alt="logo Instituto Nala">
+		<span class="logo-text">Instituto Nala</span>
+	</div>
+	<div class="menu-toggle" id="menuToggle">
+		<span></span><span></span><span></span>
+	</div>
+	<nav class="navegacao nav_bar" id="navegacao">
+		<a href="index.html">Página inicial</a>
+		<a href="doacao_rapida.html">Doação Rápida</a>
+		<a href="contatos.html">Contatos</a>
+		<a href="sobre_nos.html">Sobre nós</a>
+		<button class="botaologin" onclick="window.location.href='login_doador.html'">Fazer Login</button>
+	</nav>
+</header>
+
+<section id="doacao_rapida_section">
+	<div class="container">
+		<form id="doacao_rapida_form" class="form">
+			<div class="form_header">
+				<h1>Doação Rápida</h1>
+			</div>
+
+			<div class="input_box">
+				<label for="nome">Nome Completo</label>
+				<input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+				<span class="erro" id="nome_erro">Por favor, insira seu nome completo</span>
+			</div>
+
+			<div class="valor_selector">
+				<label>Valor da Doação</label>
+				<div class="valor_buttons">
+					<button type="button" class="valor_btn" data-valor="10">R$ 10</button>
+					<button type="button" class="valor_btn" data-valor="25">R$ 25</button>
+					<button type="button" class="valor_btn" data-valor="50">R$ 50</button>
+					<button type="button" class="valor_btn" data-valor="100">R$ 100</button>
+				</div>
+				<div class="input_box">
+					<input type="number" id="valor_personalizado" placeholder="Ou insira um valor personalizado" min="1" step="0.01">
+					<span class="erro" id="valor_erro">Por favor, selecione ou insira um valor</span>
+				</div>
+			</div>
+
+			<div class="payment_method_selector">
+				<label>Método de Pagamento</label>
+				<div class="payment_options">
+					<div class="payment_option" data-method="pix">
+						<i class="fa-brands fa-pix"></i>
+						<span>PIX</span>
+					</div>
+					<div class="payment_option" data-method="cartao">
+						<i class="fa-solid fa-credit-card"></i>
+						<span>Cartão de Crédito</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="pix_container" id="pix_container">
+				<div class="pix_placeholder">
+					<i class="fa-brands fa-pix"></i>
+					<p>Após confirmar, o código PIX será gerado para pagamento.</p>
+				</div>
+			</div>
+
+			<div class="cartao_container" id="cartao_container">
+				<div class="cartao_form">
+					<div class="input_box">
+						<label for="numero_cartao">Número do Cartão</label>
+						<div class="card_number_wrapper">
+							<input type="text" id="numero_cartao" maxlength="19" placeholder="0000 0000 0000 0000">
+							<i class="card_brand_icon fa-regular fa-credit-card" id="card_brand_icon"></i>
+						</div>
+						<span class="erro" id="cartao_erro">Número de cartão inválido</span>
+					</div>
+					
+					<div class="input_box">
+						<label for="nome_titular">Nome do Titular</label>
+						<input type="text" id="nome_titular" placeholder="JOAO DA SILVA">
+						<span class="erro" id="titular_erro">Insira o nome do titular</span>
+					</div>
+					
+					<div class="expiry_cvv_group">
+						<div class="input_box">
+							<label for="validade">Validade</label>
+							<input type="text" id="validade" maxlength="5" placeholder="MM/AA">
+							<span class="erro" id="validade_erro">Data inválida</span>
+						</div>
+						
+						<div class="input_box">
+							<label for="cvv">CVV</label>
+							<input type="text" id="cvv" maxlength="4" placeholder="000">
+							<span class="erro" id="cvv_erro">CVV inválido</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="security_badge">
+				<i class="fa-solid fa-lock"></i>
+				<span>Ambiente seguro. Instituição isenta de impostos.</span>
+			</div>
+
+			<button type="submit" class="submit_btn">Efetuar Doação</button>
+		</form>
+	</div>
+</section>
+
+<script src="../assets/js/pages/scripts_index.js"></script>
+<script src="../assets/js/pages/scripts_doacao_rapida.js"></script>
+</body>
+</html>)

@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    background: #e8e0f5;
+    flex-direction: column;
+}
+
+#donation_form {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    margin-top: 80px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.form_image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fcdcff4d 0%, #f6e6ffb2 100%);
+    padding: 2rem;
+}
+
+.form_image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.form {
+    width: 55%;
+    background-color: #ffffff;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form_header h2 {
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.form_header h2::after {
+    content: '';
+    display: block;
+    width: 3.5rem;
+    height: 0.3rem;
+    background-color: #957cc2;
+    margin-top: 0.4rem;
+    border-radius: 10px;
+}
+
+.form_header p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+form > label:first-of-type {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: -0.8rem;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.6rem;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: #957cc2;
+}
+
+.radio-group label {
+    font-size: 0.85rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.doacao_type_errormsg {
+    display: none;
+    color: #c41e3a;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.doacao_type_errormsg.visible {
+    display: block;
+}
+
+.payment-methods {
+    padding: 1rem;
+    background: #f9f6ff;
+    border-radius: 8px;
+    border: 1px solid #e0d4f7;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #957cc2;
+}
+
+.file-upload-container {
+    margin-top: 1rem;
+}
+
+.upload-area {
+    border: 2px dashed #957cc2;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    background: #f9f6ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.upload-area:hover {
+    background: #f0e6ff;
+    border-color: #8367b8;
+}
+
+.upload-area.dragover {
+    background: #e8d4ff;
+    border-color: #8367b8;
+}
+
+.upload-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 0.6rem;
+}
+
+.upload-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.upload-area p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.upload-area .file-info {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.foto_errormsg {
+    color: #c41e3a;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.foto_errormsg.visible {
+    display: block;
+}
+
+.foto-preview {
+    margin-top: 1rem;
+    display: none;
+}
+
+.foto-preview.active {
+    display: block;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#foto_remove {
+    display: none;
+    padding: 0.6rem 1.2rem;
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 0.8rem;
+}
+
+#foto_remove.active {
+    display: inline-block;
+}
+
+#foto_remove:hover {
+    background: #cc0000;
+}
+
+#submit_donation {
+    width: fit-content;
+    padding: 0.9rem 2.5rem;
+    background-color: #957cc2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(149, 124, 194, 0.3);
+    margin-top: 1rem;
+}
+
+#submit_donation:hover {
+    background-color: #8367b8;
+    box-shadow: 0 4px 12px rgba(149, 124, 194, 0.4);
+    transform: translateY(-2px);
+}
+
+.inspirational-message {
+    margin-top: 2rem;
+    text-align: center;
+    color: #957cc2;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f0f0f0;
+}
+
+@media screen and (max-width: 1024px) {
+    .form_image {
+        display: none;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #donation_form {
+        padding: 1rem 0.5rem;
+        margin-top: 70px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 0.5rem;
+    }
+
+    .form {
+        padding: 2rem 1.5rem;
+    }
+
+    .form_header h2 {
+        font-size: 1.5rem;
+    }
+
+    .upload-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .upload-area {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form {
+        padding: 1.5rem 1rem;
+    }
+
+    .form_header h2 {
+        font-size: 1.3rem;
+    }
+
+    .form_header p {
+        font-size: 0.85rem;
+    }
+
+    #submit_donation {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+    }
+}
